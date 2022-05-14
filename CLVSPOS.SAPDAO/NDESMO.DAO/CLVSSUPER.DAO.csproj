@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97A8DFB3-02FA-4940-A137-5EB2029DCF4E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CLVSSUPER.DAO</RootNamespace>
+    <AssemblyName>CLVSSUPER.DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GetData.cs" />
+    <Compile Include="Migrations\201811131635581_CreacionBD.cs" />
+    <Compile Include="Migrations\201811132108169_Campo_ServerType.cs" />
+    <Compile Include="Migrations\201811132108169_Campo_ServerType.Designer.cs">
+      <DependentUpon>201811132108169_Campo_ServerType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811151449338_TablasUsuarios_UsuarioxCompñia.cs" />
+    <Compile Include="Migrations\201811151449338_TablasUsuarios_UsuarioxCompñia.Designer.cs">
+      <DependentUpon>201811151449338_TablasUsuarios_UsuarioxCompñia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161740034_cambio-estructura-tabla-compannia.cs" />
+    <Compile Include="Migrations\201811161740034_cambio-estructura-tabla-compannia.Designer.cs">
+      <DependentUpon>201811161740034_cambio-estructura-tabla-compannia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161804588_cambio-estructura-tabla-compannia-agregar-campos-views.cs" />
+    <Compile Include="Migrations\201811161804588_cambio-estructura-tabla-compannia-agregar-campos-views.Designer.cs">
+      <DependentUpon>201811161804588_cambio-estructura-tabla-compannia-agregar-campos-views.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811191607394_quitar-campo-isowner-tabla-usuario.cs" />
+    <Compile Include="Migrations\201811191607394_quitar-campo-isowner-tabla-usuario.Designer.cs">
+      <DependentUpon>201811191607394_quitar-campo-isowner-tabla-usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811192012239_agregar-campo-WHAvailableItem-en-la-tabla-de-compannias.cs" />
+    <Compile Include="Migrations\201811192012239_agregar-campo-WHAvailableItem-en-la-tabla-de-compannias.Designer.cs">
+      <DependentUpon>201811192012239_agregar-campo-WHAvailableItem-en-la-tabla-de-compannias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811201605237_se-agrego-tabla-store.cs" />
+    <Compile Include="Migrations\201811201605237_se-agrego-tabla-store.Designer.cs">
+      <DependentUpon>201811201605237_se-agrego-tabla-store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811202214504_se-agrego-campo-seriessbyitem-en-tabla-company.cs" />
+    <Compile Include="Migrations\201811202214504_se-agrego-campo-seriessbyitem-en-tabla-company.Designer.cs">
+      <DependentUpon>201811202214504_se-agrego-campo-seriessbyitem-en-tabla-company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811211719395_eliminar-campo-sendemail-de-tabla-company-campo-exchageratevalue-default-cero.cs" />
+    <Compile Include="Migrations\201811211719395_eliminar-campo-sendemail-de-tabla-company-campo-exchageratevalue-default-cero.Designer.cs">
+      <DependentUpon>201811211719395_eliminar-campo-sendemail-de-tabla-company-campo-exchageratevalue-default-cero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811272032366_Series.cs" />
+    <Compile Include="Migrations\201811272032366_Series.Designer.cs">
+      <DependentUpon>201811272032366_Series.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281451511_se-agrego-el-campo-SP_PayDocuments-a-compannia.cs" />
+    <Compile Include="Migrations\201811281451511_se-agrego-el-campo-SP_PayDocuments-a-compannia.Designer.cs">
+      <DependentUpon>201811281451511_se-agrego-el-campo-SP_PayDocuments-a-compannia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811282044009_se-agrego-el-campo-V_GetAccounts-a-compannia.cs" />
+    <Compile Include="Migrations\201811282044009_se-agrego-el-campo-V_GetAccounts-a-compannia.Designer.cs">
+      <DependentUpon>201811282044009_se-agrego-el-campo-V_GetAccounts-a-compannia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811282130327_se-agrego-el-campo-V_GetCards-a-compannia.cs" />
+    <Compile Include="Migrations\201811282130327_se-agrego-el-campo-V_GetCards-a-compannia.Designer.cs">
+      <DependentUpon>201811282130327_se-agrego-el-campo-V_GetCards-a-compannia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291609599_seriesbyuser.cs" />
+    <Compile Include="Migrations\201811291609599_seriesbyuser.Designer.cs">
+      <DependentUpon>201811291609599_seriesbyuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291513540_agregado-campo-V_GetBanks-en-compannia.cs" />
+    <Compile Include="Migrations\201811291513540_agregado-campo-V_GetBanks-en-compannia.Designer.cs">
+      <DependentUpon>201811291513540_agregado-campo-V_GetBanks-en-compannia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291624322_merge-con-alan.cs" />
+    <Compile Include="Migrations\201811291624322_merge-con-alan.Designer.cs">
+      <DependentUpon>201811291624322_merge-con-alan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811292247406_agregado-campo-V_GetSalesMan-en-compannia.cs" />
+    <Compile Include="Migrations\201811292247406_agregado-campo-V_GetSalesMan-en-compannia.Designer.cs">
+      <DependentUpon>201811292247406_agregado-campo-V_GetSalesMan-en-compannia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811302247382_SP_Cancelpaiments.cs" />
+    <Compile Include="Migrations\201811302247382_SP_Cancelpaiments.Designer.cs">
+      <DependentUpon>201811302247382_SP_Cancelpaiments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812121719089_delete-favorite-filed-from-companybyusers.cs" />
+    <Compile Include="Migrations\201812121719089_delete-favorite-filed-from-companybyusers.Designer.cs">
+      <DependentUpon>201812121719089_delete-favorite-filed-from-companybyusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812121934185_Cambios-Reportes.cs" />
+    <Compile Include="Migrations\201812121934185_Cambios-Reportes.Designer.cs">
+      <DependentUpon>201812121934185_Cambios-Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812141603454_reporte-cotizacion.cs" />
+    <Compile Include="Migrations\201812141603454_reporte-cotizacion.Designer.cs">
+      <DependentUpon>201812141603454_reporte-cotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812261907291_ReporteSO.cs" />
+    <Compile Include="Migrations\201812261907291_ReporteSO.Designer.cs">
+      <DependentUpon>201812261907291_ReporteSO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901161725352_InitialCreate.cs" />
+    <Compile Include="Migrations\201901161725352_InitialCreate.Designer.cs">
+      <DependentUpon>201901161725352_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908292302554_cambio_reporte_cierre.cs" />
+    <Compile Include="Migrations\201908292302554_cambio_reporte_cierre.Designer.cs">
+      <DependentUpon>201908292302554_cambio_reporte_cierre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NDESMO_Entities.cs" />
+    <Compile Include="PostData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811132108169_Campo_ServerType.resx">
+      <DependentUpon>201811132108169_Campo_ServerType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811151449338_TablasUsuarios_UsuarioxCompñia.resx">
+      <DependentUpon>201811151449338_TablasUsuarios_UsuarioxCompñia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161740034_cambio-estructura-tabla-compannia.resx">
+      <DependentUpon>201811161740034_cambio-estructura-tabla-compannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161804588_cambio-estructura-tabla-compannia-agregar-campos-views.resx">
+      <DependentUpon>201811161804588_cambio-estructura-tabla-compannia-agregar-campos-views.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811191607394_quitar-campo-isowner-tabla-usuario.resx">
+      <DependentUpon>201811191607394_quitar-campo-isowner-tabla-usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811192012239_agregar-campo-WHAvailableItem-en-la-tabla-de-compannias.resx">
+      <DependentUpon>201811192012239_agregar-campo-WHAvailableItem-en-la-tabla-de-compannias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811201605237_se-agrego-tabla-store.resx">
+      <DependentUpon>201811201605237_se-agrego-tabla-store.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811202214504_se-agrego-campo-seriessbyitem-en-tabla-company.resx">
+      <DependentUpon>201811202214504_se-agrego-campo-seriessbyitem-en-tabla-company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811211719395_eliminar-campo-sendemail-de-tabla-company-campo-exchageratevalue-default-cero.resx">
+      <DependentUpon>201811211719395_eliminar-campo-sendemail-de-tabla-company-campo-exchageratevalue-default-cero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811272032366_Series.resx">
+      <DependentUpon>201811272032366_Series.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281451511_se-agrego-el-campo-SP_PayDocuments-a-compannia.resx">
+      <DependentUpon>201811281451511_se-agrego-el-campo-SP_PayDocuments-a-compannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811282044009_se-agrego-el-campo-V_GetAccounts-a-compannia.resx">
+      <DependentUpon>201811282044009_se-agrego-el-campo-V_GetAccounts-a-compannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811282130327_se-agrego-el-campo-V_GetCards-a-compannia.resx">
+      <DependentUpon>201811282130327_se-agrego-el-campo-V_GetCards-a-compannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291609599_seriesbyuser.resx">
+      <DependentUpon>201811291609599_seriesbyuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291513540_agregado-campo-V_GetBanks-en-compannia.resx">
+      <DependentUpon>201811291513540_agregado-campo-V_GetBanks-en-compannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291624322_merge-con-alan.resx">
+      <DependentUpon>201811291624322_merge-con-alan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811292247406_agregado-campo-V_GetSalesMan-en-compannia.resx">
+      <DependentUpon>201811292247406_agregado-campo-V_GetSalesMan-en-compannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811302247382_SP_Cancelpaiments.resx">
+      <DependentUpon>201811302247382_SP_Cancelpaiments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121719089_delete-favorite-filed-from-companybyusers.resx">
+      <DependentUpon>201812121719089_delete-favorite-filed-from-companybyusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121934185_Cambios-Reportes.resx">
+      <DependentUpon>201812121934185_Cambios-Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812141603454_reporte-cotizacion.resx">
+      <DependentUpon>201812141603454_reporte-cotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812261907291_ReporteSO.resx">
+      <DependentUpon>201812261907291_ReporteSO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901161725352_InitialCreate.resx">
+      <DependentUpon>201901161725352_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908292302554_cambio_reporte_cierre.resx">
+      <DependentUpon>201908292302554_cambio_reporte_cierre.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NDESMO.COMMON\CLVSSUPER.COMMON.csproj">
+      <Project>{1900C5B3-47AB-4A24-8028-0AD88FA1C972}</Project>
+      <Name>CLVSSUPER.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NDESMO.MODELS\CLVSSUPER.MODELS.csproj">
+      <Project>{9F23E3CC-EF70-4EF1-9A35-0833D575EC43}</Project>
+      <Name>CLVSSUPER.MODELS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55639</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55639/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

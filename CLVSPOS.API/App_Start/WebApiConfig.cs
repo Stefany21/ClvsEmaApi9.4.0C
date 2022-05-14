@@ -1,0 +1,27 @@
+﻿using System.Web.Http;
+using System.Web.Http.Cors;
+
+namespace CLVSPOS.API
+{
+    public static class WebApiConfig
+    {
+        public static string UrlPrefix { get { return "api"; } }
+        public static string UrlPrefixRelative { get { return "~/api"; } }
+
+        public static void Register(HttpConfiguration config)
+        {            
+            // Web API configuration and services
+            var corsAttr = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(corsAttr);
+
+            // Web API routes
+            config.MapHttpAttributeRoutes();
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate:  WebApiConfig.UrlPrefix + "/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+        }
+    }
+}
