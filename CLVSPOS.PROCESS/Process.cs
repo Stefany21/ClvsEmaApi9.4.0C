@@ -2359,23 +2359,13 @@ namespace CLVSPOS.PROCESS
 
 				string userId = GetUserId();
 
-				JObject jObjectPayment = (JObject)JsonConvert.DeserializeObject(new JavaScriptSerializer().Serialize(createInvoice.Payment));
+				if (createInvoice.Payment != null) {
 
-				if (createInvoice.Invoice.DocCurrency.Equals(createInvoice.Payment.DocCurrency))
-				{
-					List<string> unnecessariesPropertiesPayment = new List<string>()
+					if (createInvoice.Invoice.DocCurrency.Equals(createInvoice.Payment.DocCurrency))
 					{
-						"DocRate"
-					};
+						createInvoice.Payment.DocRate = 0;
 
-					foreach (string propertie in unnecessariesPropertiesPayment)
-					{
-						jObjectPayment.Property(propertie).Remove();
 					}
-
-					string JSONPayment = jObjectPayment.ToString();
-
-					createInvoice.Payment = new JavaScriptSerializer().Deserialize<BasePayment>(JSONPayment);
 				}
 
 

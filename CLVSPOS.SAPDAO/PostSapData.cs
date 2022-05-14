@@ -47,7 +47,7 @@ namespace CLVSPOS.SAPDAO
 
 					
 
-					Resources connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+					Resources connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 					Login loggin = new CLVSSLCONN.Models.Login()
 					{
@@ -125,7 +125,7 @@ namespace CLVSPOS.SAPDAO
 
 
 
-					HttpResponseMessage responsSalesOrder = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/Orders", "POST", new List<KeyValuePair<string, string>>(), SalesOrderString);
+					HttpResponseMessage responsSalesOrder = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/Orders", "POST", new List<KeyValuePair<string, string>>(), SalesOrderString);
 
 
 
@@ -171,7 +171,7 @@ namespace CLVSPOS.SAPDAO
 				{
 
 
-					Resources connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+					Resources connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 					Login loggin = new CLVSSLCONN.Models.Login()
 					{
@@ -285,7 +285,7 @@ namespace CLVSPOS.SAPDAO
 
 					HttpResponseMessage responseSalesOrder = await connection.SLRequest(
 						loggin,
-						$"https://clhna31.clavisco.com:50000/b1s/v1/Orders({saleOrder.DocEntry})",
+						$"https://clapp42.clavisco.com:50000/b1s/v1/Orders({saleOrder.DocEntry})",
 						"PATCH",
 						new List<KeyValuePair<string, string>>() {
 							new KeyValuePair<string, string>("B1S-ReplaceCollectionsOnPatch","true")
@@ -369,7 +369,7 @@ namespace CLVSPOS.SAPDAO
 					});
 				}
 
-				Resources connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+				Resources connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 				Login loggin = new CLVSSLCONN.Models.Login()
 				{
@@ -415,7 +415,7 @@ namespace CLVSPOS.SAPDAO
 
 
 
-				HttpResponseMessage responseQuotation = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/Quotations", "POST", new List<KeyValuePair<string, string>>(), QuotationString);
+				HttpResponseMessage responseQuotation = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/Quotations", "POST", new List<KeyValuePair<string, string>>(), QuotationString);
 
 
 
@@ -462,7 +462,7 @@ namespace CLVSPOS.SAPDAO
 					throw new Exception("El documento debe contener al menos una lina.");
 				}
 
-				Resources connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+				Resources connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 				Login loggin = new CLVSSLCONN.Models.Login()
 				{
@@ -563,7 +563,7 @@ namespace CLVSPOS.SAPDAO
 
 				string QuotationString = jObjectQuotations.ToString();
 
-				HttpResponseMessage responseQuotation = await connection.SLRequest(loggin, $"https://clhna31.clavisco.com:50000/b1s/v1/Quotations({quotationEdit.DocEntry})", "PATCH", new List<KeyValuePair<string, string>>() {
+				HttpResponseMessage responseQuotation = await connection.SLRequest(loggin, $"https://clapp42.clavisco.com:50000/b1s/v1/Quotations({quotationEdit.DocEntry})", "PATCH", new List<KeyValuePair<string, string>>() {
 
 							 new KeyValuePair<string, string>("B1S-ReplaceCollectionsOnPatch","true")
 
@@ -762,7 +762,7 @@ namespace CLVSPOS.SAPDAO
 
 
 
-					Resources connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+					Resources connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 
 
@@ -834,7 +834,7 @@ namespace CLVSPOS.SAPDAO
 					var _startTimeSapDocument = DateTime.Now;
 					PostData.UpdateLog(oLogModel, "", "", _startTimeSapDocument, null, "", null, null, null, null, "");
 
-					HttpResponseMessage createInvoiceRequestSL = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/Invoices", "POST", new List<KeyValuePair<string, string>>(), JSONInvoice);
+					HttpResponseMessage createInvoiceRequestSL = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/Invoices", "POST", new List<KeyValuePair<string, string>>(), JSONInvoice);
 
 					var endTimeSapDocument = DateTime.Now;
 					PostData.UpdateLog(oLogModel, "", "", _startTimeSapDocument, endTimeSapDocument, (_startTimeSapDocument - endTimeSapDocument).ToString(), null, null, null, null, "");
@@ -919,7 +919,7 @@ namespace CLVSPOS.SAPDAO
 								string JSONPayment = jObjectPayment.ToString();//new JavaScriptSerializer().Serialize(Payment);													
 
 
-								HttpResponseMessage createPaymentRequestSL = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/IncomingPayments", "POST", new List<KeyValuePair<string, string>>(), JSONPayment);
+								HttpResponseMessage createPaymentRequestSL = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/IncomingPayments", "POST", new List<KeyValuePair<string, string>>(), JSONPayment);
 
 
 								// var debbug = createPaymentRequestSL.Content.ReadAsStringAsync().Result;
@@ -1228,7 +1228,7 @@ namespace CLVSPOS.SAPDAO
 					}
 
 
-					var connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+					var connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 					var userAsing = DAO.GetData.GetUserMappId(userId);
 
@@ -1244,10 +1244,10 @@ namespace CLVSPOS.SAPDAO
 
 
 
-					var createPaymentRequestSL = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/IncomingPayments", "POST", new List<KeyValuePair<string, string>>(), JSONPayment);
+					var createPaymentRequestSL = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/IncomingPayments", "POST", new List<KeyValuePair<string, string>>(), JSONPayment);
 
 					// Esto es MERAMENTE DE PRUEBAS NO HACE NADA EN EL FLUJO solo se utiliza para conocer como se mapean los datos.
-					//var t = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/IncomingPayments(35606)", "GET", new List<KeyValuePair<string, string>>(), "");
+					//var t = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/IncomingPayments(35606)", "GET", new List<KeyValuePair<string, string>>(), "");
 					//var debbug = t.Content.ReadAsStringAsync().Result;
 
 
@@ -1763,7 +1763,7 @@ namespace CLVSPOS.SAPDAO
 
 
 
-					var connection = new Resources("https://clhna31.clavisco.com:50000/", "/b1s/v1/Login");
+					var connection = new Resources("https://clapp42.clavisco.com:50000/", "/b1s/v1/Login");
 
 					var userAsing = DAO.GetData.GetUserMappId(userId);
 
@@ -1777,9 +1777,9 @@ namespace CLVSPOS.SAPDAO
 
 					// var slCompany = await connection.SLAuthentication(loggin, null);
 
-					var createPaymentRequestSL = await connection.SLRequest(loggin, "https://clhna31.clavisco.com:50000/b1s/v1/VendorPayments", "POST", new List<KeyValuePair<string, string>>(), JSONPayment);
+					var createPaymentRequestSL = await connection.SLRequest(loggin, "https://clapp42.clavisco.com:50000/b1s/v1/VendorPayments", "POST", new List<KeyValuePair<string, string>>(), JSONPayment);
 
-					// var createPaymentRequestSL = await connection.SLRequest("https://clhna31.clavisco.com:50000/b1s/v1/VendorPayments", "GET", slCompany.Cookie.SessionId, "");
+					// var createPaymentRequestSL = await connection.SLRequest("https://clapp42.clavisco.com:50000/b1s/v1/VendorPayments", "GET", slCompany.Cookie.SessionId, "");
 
 					var debbug = createPaymentRequestSL.Content.ReadAsStringAsync().Result;
 
